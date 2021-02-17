@@ -38,9 +38,9 @@ body {
 }
 
 .accordion-container {
-  width: 50%;
-  height: auto;
-  margin: 70px 60px;
+  max-width: 400px;
+  overflow: hidden;
+  padding: 10px 30px;
 }
 
 .accordion-container h1 {
@@ -50,28 +50,26 @@ body {
   overflow: hidden;
 }
 
-.tabs {
-  max-width: 400px;
+.question_tab {
+  padding: 12px 0;
 }
 
-.question_tab {
-  line-height: 2;
-}
-
-.question_tab {
-  padding-bottom: 14px 20px;
+.title,
+.content {
+  padding-right: 100px;
 }
 
 .title {
+  display: block;
+  color: var(--dark_greyblue_text);
+  cursor: pointer;
   position: relative;
-  font-weight: 700;
-  transition: 0.5s;
-  color: var(--very_dark_greyblue_text);
+  transition: 0.1s;
+  white-space: nowrap;
 }
 
 .title:hover {
   color: var(--soft_red_text);
-  cursor: pointer;
 }
 
 .title::after {
@@ -79,17 +77,17 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 100%;
-  height: 50%;
+  right: 20px;
+  width: 12px;
+  height: 6px;
   background-image: url("images/icon-arrow-down.svg");
+  background-size: contain;
   background-repeat: no-repeat;
+  transition: transform 0.4s;
 }
 
 .content {
   display: none;
-  opacity: 0;
-  transition: 1s;
-  color: var(--dark_greyblue_text);
 }
 
 .accordion_class {
@@ -98,5 +96,27 @@ body {
 
 .accordion_class:checked ~ .content {
   display: block;
-  opacity: 1;
+  padding: 10px 0;
+  padding-right: 50px;
+  font-size: 13px;
+  color: var(--dark_blue_text);
+}
+
+.accordion_class:checked ~ .title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--very_dark_greyblue_text);
+}
+
+.accordion_class:checked ~ .title::after {
+  transform: translateY(-50%) rotate(0.5turn);
+}
+
+.divider:not([size]) {
+  height: 1px;
+}
+
+.divider {
+  background-color: var(--divider_light_blue);
+  border: solid 1px var(--divider_light_blue)
 }
