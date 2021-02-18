@@ -14,11 +14,38 @@
 
     <title>Frontend Mentor | FAQ Accordion Card</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="container">
       <div class="img-container">
-        <img src="images/illustration-woman-online-desktop.svg" alt="" />
+        <img src="images/illustration-box-desktop.svg" alt="box" class="box" />
+        <div class="illustrations">
+          <img
+            src="images/illustration-woman-online-desktop.svg"
+            alt="desktop"
+            class="desktop"
+          />
+          <img
+            src="images/illustration-woman-online-mobile.svg"
+            alt="mobile"
+            class="mobile"
+          />
+          <img
+            src="images/bg-pattern-desktop.svg"
+            alt="bg-desktop"
+            class="bg-desktop"
+          />
+          <img
+            src="images/bg-pattern-mobile.svg"
+            alt="bg-mobile"
+            class="bg-mobile"
+          />
+        </div>
       </div>
       <div class="accordion-container">
         <h1>FAQ</h1>
@@ -46,11 +73,59 @@
             class="accordion_class"
           />
           <label class="title" for="storage">
-            What is the maximum upload size?
+            What is the maximum file upload size?
           </label>
           <div class="content">
             No more than 2GB. All files in your account must fit your allotted
             storage space.
+          </div>
+        </div>
+        <hr class="divider" />
+        <div class="question_tab">
+          <input
+            type="checkbox"
+            name="accordion"
+            id="password"
+            class="accordion_class"
+          />
+          <label class="title" for="password">
+            How do I reset my password?
+          </label>
+          <div class="content">
+            Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.
+          </div>
+        </div>
+        <hr class="divider" />
+        <div class="question_tab">
+          <input
+            type="checkbox"
+            name="accordion"
+            id="cancel"
+            class="accordion_class"
+          />
+          <label class="title" for="cancel">
+            Can I cancel my subscription?
+          </label>
+          <div class="content">
+            Yes! Send us a message and we’ll process your request no questions
+            asked.
+          </div>
+        </div>
+        <hr class="divider" />
+        <div class="question_tab">
+          <input
+            type="checkbox"
+            name="accordion"
+            id="support"
+            class="accordion_class"
+          />
+          <label class="title" for="support">
+            Do you provide additional support?
+          </label>
+          <div class="content">
+            Chat and email support is available 24/7. Phone lines are open
+            during normal business hours.
           </div>
         </div>
       </div>
