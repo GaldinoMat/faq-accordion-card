@@ -18,6 +18,7 @@ html {
   box-sizing: border-box;
 }
 
+/* Genral sizings */
 body {
   margin: auto auto;
   background-image: linear-gradient(
@@ -49,9 +50,8 @@ a {
   box-shadow: 0px 15px 40px 10px rgba(0, 0, 0, 0.15);
 }
 
-#last-divider {
-  display: none;
-}
+/* Image containers */
+/* Id's */
 
 #bg-desktop {
   position: relative;
@@ -63,6 +63,7 @@ a {
   display: none;
 }
 
+/* Classes */
 .img-container {
   max-width: 455px;
   height: 500px;
@@ -95,8 +96,9 @@ a {
   display: none;
 }
 
+/* Accordion containers*/
 .accordion-container {
-  max-width: 400px;
+  width: 400px;
   padding: 60px 30px;
   padding-left: 0;
 }
@@ -109,11 +111,6 @@ a {
 
 .question-tab {
   padding: 15px 0;
-}
-
-.title,
-.content {
-  padding-right: 100px;
 }
 
 .title {
@@ -136,9 +133,9 @@ a {
   transform: translateY(-50%);
   width: 12px;
   height: 6px;
-  right: 0;
+  right: -12px;
   background-image: url("images/icon-arrow-down.svg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   transition: transform 0.4s;
 }
@@ -168,14 +165,18 @@ a {
 }
 
 .accordion-class:checked ~ .title::after {
-  right: -12px;
   transform: translateY(-50%) rotate(0.5turn);
 }
 
+/* Misc */
 .divider {
   background-color: var(--divider-light-blue);
   border: solid 0.5px var(--divider-light-blue);
   width: 100%;
+}
+
+#last-divider {
+  display: none;
 }
 
 .attribution {
@@ -183,32 +184,20 @@ a {
   text-align: center;
 }
 
+/* Media Queries */
 @media screen and (max-width: 975px) {
+  /* General sizings */
   #container {
     flex-direction: column;
     position: relative;
     width: 78%;
-    height: auto;
+    height: 50%;
     align-items: center;
-    padding: 0;
     margin-top: 150px;
+    margin-bottom: 0;
   }
 
-  .img-container {
-    position: relative;
-    right: 15px;
-    align-items: center;
-    height: 4.375em;
-  }
-
-  .illustrations {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    overflow: visible;
-  }
-
+  /* Image containers */
   #bg-desktop,
   .desktop,
   .box {
@@ -226,51 +215,79 @@ a {
     left: 15px;
   }
 
+  .img-container {
+    position: relative;
+    right: 15px;
+    align-items: center;
+    height: 4.375em;
+  }
+
+  .illustrations {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+  }
+
+  /* Accordion containers */
   .accordion-container {
-    width: 100%;
+    max-width: 77%;
     height: 100%;
+    margin: 0;
     padding: 0;
-    padding-bottom: 75px;
+    padding: 60px 0;
   }
 
   .accordion-container h1 {
     margin: auto;
     padding: 0;
-    margin-top: 2em;
     margin-bottom: 0.5em;
     text-align: center;
   }
 
   .question-tab {
-    width: 85%;
-    margin: auto;
-    font-size: 13px;
+    width: 100%;
+    font-size: 12px;
+    padding: 12px 0;
   }
 
-  .attribution {
-    display: none;
+  .title::after {
+    right: -20px;
   }
 
   .accordion-class:checked ~ .content {
     display: block;
-    padding: 10px 0;
+    padding: 5px 0;
     padding-right: 15px;
     font-size: 12px;
     color: var(--dark-blue-text);
   }
 
   .accordion-class:checked ~ .title::after {
-    right: 2px;
+    right: -20px;
     transform: translateY(-50%) rotate(0.5turn);
   }
+
+  /* Misc */
   #last-divider {
     display: block;
   }
+
+  .attribution {
+    display: none;
+  }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 760px) and (max-width: 975px) {
+  /* General sizings */
+  #container {
+    max-width: 78%;
+  }
+
+  /* Accordion containers */
   .question-tab {
-    width: 400px;
+    width: 100%;
     font-size: 16px;
   }
 
@@ -279,11 +296,11 @@ a {
   }
 
   .title::after {
-    right: -15px;
+    right: 0;
   }
 
   .accordion-class:checked ~ .title::after {
-    right: -12px;
+    right: 0;
     transform: translateY(-50%) rotate(0.5turn);
   }
 }
